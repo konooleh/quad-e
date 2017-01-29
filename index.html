@@ -1,22 +1,40 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Lato:300,400|Open+Sans+Condensed:300" rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css">
+  <title>Quadratic Equasion</title>
 </head>
+
 <body>
-  <p>Coefficient A should not be equal to 0.</p>
-  <p>Discriminant should be greater than 0.</p>
-  <input type="number" name="coefficientA" id="coefficientA" placeholder="Coefficient A">
-  <span>x<sup>2</sup> + </span>
-  <input type="number" name="coefficientB" id="coefficientB" placeholder="Coefficient B">
-  <span>x + </span>
-  <input type="number" name="coefficientC" id="coefficientC" placeholder="Coefficient C">
-  <span> = </span>
-  <button type="submit" id="button" onclick="writeResult()">Get result</button>
-  <p id="discriminant">Discriminant = </p>
-  <p id="result">Result: </p>
+  <header>
+    <div class="logo">
+      <a href="#">Quadratic Equasion</a>
+    </div>
+  </header>
+  <div class="box">
+  <p>A quadratic equation is any equation having the form <b>ax<sup>2</sup> + bx +c = 0</b> where <b>x</b> represents an unknown, and <b>a</b>, <b>b</b>, and <b>c</b> represent known numbers such that a is not equal to <b>0</b>.
+  <br>
+  If <b>a = 0</b>, then the equation is linear, not quadratic!
+  <br>
+  <br>
+  a = <input type="number" name="cA" id="cA">
+  <br>
+  b = <input type="number" name="cB" id="cB">
+  <br>
+  c = <input type="number" name="cC" id="cC">
+  <br>
+  <br>
+  <button type="submit" id="button" onclick="writeResult()">Calculate</button></p>
+  <p id="discriminant">Discriminant (Δ) = </p>
+  <p id="result">Roots (<i>p</i>): </p>
+  </div>
   
   <script src="js/index.js"></script>
 </body>
+
 </html>

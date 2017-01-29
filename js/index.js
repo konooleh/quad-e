@@ -1,22 +1,35 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-</head>
-<body>
-  <p>Coefficient A should not be equal to 0.</p>
-  <p>Discriminant should be greater than 0.</p>
-  <input type="number" name="coefficientA" id="coefficientA" placeholder="Coefficient A">
-  <span>x<sup>2</sup> + </span>
-  <input type="number" name="coefficientB" id="coefficientB" placeholder="Coefficient B">
-  <span>x + </span>
-  <input type="number" name="coefficientC" id="coefficientC" placeholder="Coefficient C">
-  <span> = </span>
-  <button type="submit" id="button" onclick="writeResult()">Get result</button>
-  <p id="discriminant">Discriminant = </p>
-  <p id="result">Result: </p>
+
+var cA, cB, cC;
+var unknownOne, unknownTwo;
+var result;
+var discriminant;
+
+function quadraticEquation(a, b, c) {
+  discriminant = b * b - 4 * a * c;
   
-  <script src="index.js"></script>
-</body>
-</html>
+  if (discriminant < 0 || a == 0) {
+    result = 'There are no real quadrats';
+    
+  }  else if (discriminant > 0) {
+    unknownOne = (-b + Math.sqrt(discriminant)) / (2 * a);
+    unknownTwo = (-b - Math.sqrt(discriminant)) / (2 * a);
+    result = 'x<sub>1</sub> = ' + unknownOne + 
+           '; x<sub>2</sub> = ' + unknownTwo;
+    
+  } else if (discriminant == 0) {
+    result = 'Unknown' + ' ' -b / (2 * a);
+  }
+  
+  return result;
+};
+
+function writeResult() {
+  cA = Number(document.getElementById('cA').value);
+  cB = Number(document.getElementById('cB').value);
+  cC = Number(document.getElementById('cC').value);
+  
+  quadraticEquation(cA, cB, cC);
+  document.getElementById('discriminant').innerHTML =
+      'Discriminant (Δ) = ' + discriminant;
+  document.getElementById('result').innerHTML = 'Roots (<i>p</i>): ' + result;
+};

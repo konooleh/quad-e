@@ -8,7 +8,7 @@ function quadraticEquation(a, b, c) {
   discriminant = b * b - 4 * a * c;
   
   if (discriminant < 0 || a == 0) {
-    result = 'There are no real quadrats';
+    result = 'Invalid coefficients';
     
   }  else if (discriminant > 0) {
     unknownOne = (-b + Math.sqrt(discriminant)) / (2 * a);
